@@ -1,2 +1,2 @@
-# App
+# Work Python application
  
