@@ -1,4 +1,6 @@
 '''
+MUST INSTALL
+
 pip install numpy
 pip install pandas
 pip install requests
@@ -20,7 +22,7 @@ keywords = pd.read_csv('App\\Excel data\\Samplelist.csv')
 collected_data = []
 
 for query in keywords['Name']:
-    html = requests.get(f'https://www.google.com/search?q={query} +Ukraine +Ukraine War', headers=headers)
+    html = requests.get(f'https://www.google.com/search?q={query} +Ukraine-Russia +war +2022', headers=headers)
     soup = BeautifulSoup(html.text, 'lxml')
     
     collected_data.append({
