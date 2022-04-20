@@ -25,7 +25,7 @@ for query in keywords['Name']:
     
     collected_data.append({
         'Query': query
-    })
+    }) 
     for result in soup.select('.tF2Cxc'):
         title = result.select_one('.DKV0Md').text
         link = result.select_one('.yuRUbf a')['href']
