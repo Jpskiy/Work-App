@@ -1,6 +1,7 @@
 '''
-MUST INSTALL
+In parent folder powershell terminal python -m venv env
 
+MUST INSTALL
 pip install numpy
 pip install pandas
 pip install requests
