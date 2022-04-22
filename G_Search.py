@@ -12,17 +12,18 @@ import numpy as np
 import pandas as pd
 import requests, lxml
 from bs4 import BeautifulSoup
+import os
 
 headers = {
     "referer":"referer: https://www.google.com/",
     "user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
     }
 
-keywords = pd.read_csv('App\\Excel data\\Samplelist.csv')
+keywords = pd.read_csv('App\\Excel\\S_Names.csv')
 collected_data = []
 
 for query in keywords['Name']:
-    html = requests.get(f'https://www.google.com/search?q={query} +Ukraine-Russia +war +2022', headers=headers)
+    html = requests.get(f'https://www.google.com/search?q={query} +Ukraine-Russia +2022', headers=headers)
     soup = BeautifulSoup(html.text, 'lxml')
     
     collected_data.append({
@@ -52,4 +53,5 @@ for query in keywords['Name']:
 
 # create dataframe and save it as .csv
 df = pd.DataFrame(collected_data)
-df.to_csv('App/Excel data/bs4_final_new.csv', index=False, encoding="utf-8-sig")
+df.to_csv('App/Excel/Queries.csv', index=False, encoding="utf-8-sig")
+os.system('start EXCEL.EXE App\\Excel\\Queries.csv')
