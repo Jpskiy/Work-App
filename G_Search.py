@@ -20,7 +20,7 @@ headers = {
     "user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
     }
 
-keywords = pd.read_csv('Work-App\\Excel\\S_Names.csv')
+keywords = pd.read_csv('Work-App-main\\Excel\\S_Names.csv')
 collected_data = []
 
 for query in keywords['Name']:
@@ -54,5 +54,5 @@ for query in keywords['Name']:
 
 # create dataframe and save it as .csv
 df = pd.DataFrame(collected_data)
-df.to_csv('Work-App/Excel/Queries.csv', index=False, encoding="utf-8-sig")
-os.system('start EXCEL.EXE Work-App\\Excel\\Queries.csv')
+df.to_csv('Work-App-main/Excel/Queries.csv', index=False, encoding="utf-8-sig")
+os.system('start EXCEL.EXE Work-App-main\\Excel\\Queries.csv')
